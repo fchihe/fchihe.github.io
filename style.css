@@ -1,0 +1,62 @@
+.tombstone
+{
+  columns:6;
+  column-rule :2px solid black;
+  min-height:97vh;
+  text-align: justify;
+  column-gap: 35px;
+  font-size: 0.9em
+}
+
+body
+{
+  color: black;
+  
+  font-family : 'Times New Roman'
+}
+header
+{
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+font-size: 5em;
+}
+h1.une{
+  font-size : 3em;
+  text-align: center;
+  padding: 20px 0px;
+  margin: 0px 0px;
+  font-style: italic;
+}
+h1.date{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    text-align: center;
+    border-top : 2px grey  solid ;
+    border-bottom : 2px grey  solid ;
+    padding: 5px 0px;
+}
+h2{
+  font-size : 2em;
+  text-align: center;
+  border-bottom : 1px grey solid;
+  border-top : 1px grey solid;
+  padding: 20px 0px;
+  margin: 5px 0px 20px 0px;
+  font-style: italic;
+}
+.container {
+  width: 1330px;
+  margin:auto;
+  background-image: url("./fond.png");
+  padding: 0px 25px 30px 25px;
+  border: 1px solid grey;
+  box-shadow: 8px 7px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 1px 7px 7px 1px;
+
+}
+@media only screen and (max-width: 768px) {
+ .tombstone
+{
+  columns:2;
+  }
+}

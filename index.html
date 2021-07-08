@@ -1,59 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-.tombstone
-{
-  columns:6;
-  column-rule :2px solid black;
-  min-height:97vh;
-  text-align: justify;
-  column-gap: 35px;
-  font-size: 0.9em
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
+<link href="./style.css" rel="stylesheet">
 
-
-body
-{
-  color: black;
-  
-  font-family : 'Times New Roman'
-}
-h1{
-  font-size : 4.3em;
-  text-align: center;
-  border-bottom : 2px grey solid;
-  border-top : 2px grey solid;
-  padding: 35px 0px;
-  font-style: italic;
-}
-
-h2{
-  font-size : 2em;
-  text-align: center;
-  border-bottom : 1px grey solid;
-  border-top : 1px grey solid;
-  padding: 20px 0px;
-  margin: 5px 0px 20px 0px;
-  font-style: italic;
-}
-.container {
-  width: 1330px;
-  margin:auto;
-}
-@media only screen and (max-width: 768px) {
- .tombstone
-{
-  columns:2;
-  }
-}
-    </style>
 
   </head>
   <body>
     <div class="container">
-
-<h1><span id="compteur">0</span> emplois détruits depuis 2002</h1>
+      <header>     
+          PLANS DE LICENCIEMENTS
+      </header>
+      <h1 class="date"> JEUDI 8 JUILLET 2021</h1>
+<h1 class="une"><span id="compteur">0</span> EMPLOIS DETRUITS DEPUIS 2002</h1>
 <div class="tombstone">
   <h2>Ils ne sont pas simplement des chiffres</h2>
   <h3> Les chiffres seuls ne peuvent pas mesurer l'impact du Coronavirus sur la France Les chiffres seuls ne peuvent pas mesurer l'impact du Coronavirus sur la FranceLes chiffres seuls ne peuvent pas mesurer l'impact du Coronavirus sur la FranceLes chiffres seuls ne peuvent pas mesurer l'impact du Coronavirus sur la FranceLes chiffres seuls ne peuvent pas mesurer l'impact du Coronavirus sur la France</h3>
@@ -518,31 +479,6 @@ h2{
    <strong>Orange</strong> 888 salariés (2021) &bull;
 </div>
 </div>
-<script>
-  (function(){
-var n = 243520; // Nombre final du compteur
-var cpt = 0; // Initialisation du compteur
-var duree = 10; // Durée en seconde pendant laquel le compteur ira de 0 à 15
-var delta = Math.ceil((duree * 1000) / n); // On calcule l'intervalle de temps entre chaque rafraîchissement du compteur (durée mise en milliseconde)
-var node =  document.getElementById("compteur"); // On récupère notre noeud où sera rafraîchi la valeur du compteur
-
-function countdown() {
-var restant = n - cpt;
-var random = getRandomIntInclusive(1,1000);
-cpt = cpt + (Math.min(random,restant));
-node.innerHTML = cpt;
-if( cpt < n ) { 
- setTimeout(countdown, delta);
-}
-}
-
-function getRandomIntInclusive(min, max) {
-min = Math.ceil(min);
-max = Math.floor(max);
-return Math.floor(Math.random() * (max - min +1)) + min;
-}
-setTimeout(countdown, delta);
-})()
-</script>
+<script src="./script.js"></script>
   </body>
 </html>
