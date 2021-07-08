@@ -6,7 +6,6 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 var CMS = function(config) {
-  'use strict';
 
   var container;
   var messageContainer;
