@@ -5,7 +5,8 @@
   min-height:97vh;
   text-align: justify;
   column-gap: 35px;
-  font-size: 0.9em
+  font-size: 0.9em;
+  padding: 0 25px ;
 }
 
 body
