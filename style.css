@@ -1,7 +1,6 @@
 .tombstone {
     columns: 6;
     column-rule: 2px solid black;
-    min-height: 97vh;
     text-align: justify;
     column-gap: 35px;
     font-size: 0.9em;
