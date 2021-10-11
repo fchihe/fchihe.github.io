@@ -19,7 +19,7 @@
             nbEmployes: getRandomIntInclusive(1, 1000)
         }
         var htmlLine = generateLine(planLicenciement);
-        nameList.appendChild(htmlLine);
+        // nameList.appendChild(htmlLine);
     }
 
     function generateLine(plan) {
@@ -27,9 +27,9 @@
         var companyNameSpan = document.createElement('span');
         companyNameSpan.classList.add('company-name');
         companyNameSpan.appendChild(document.createTextNode(plan.entreprise));
-
+        var planAnnee = plan.annee ? '(' + plan.annee + ')' : '';
         lineSpan.appendChild(companyNameSpan);
-        lineSpan.innerHTML += ' : ' + plan.nbEmployes + '  employés (' + plan.annee + ') ' + plan.ville + ' &bull; ';
+        lineSpan.innerHTML += ' : ' + plan.nbEmployes + '  employés ' +planAnnee+' ' + plan.ville + ' &bull; ';
 
         return lineSpan;
     }
@@ -50,4 +50,38 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     setTimeout(countdown, delta);
+
+    var nameList = document.getElementById('name-list');
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://raw.githubusercontent.com/PlansDe/plans_de/main/table.csv', true);
+
+    request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+        // Success!
+        var rows = request.responseText.split('\n');
+        rows
+            .filter(x => x)
+            .forEach(row => {
+                var fields = row.split(',');
+                console.log(fields);
+                var planLicenciement = {
+                    ville: fields[1],
+                    entreprise: fields[0],
+                    annee: fields[5].replace('\r',''),
+                    nbEmployes: fields[4]
+                }
+                var htmlLine = generateLine(planLicenciement);
+                nameList.appendChild(htmlLine);
+                    });
+    } else {
+        // We reached our target server, but it returned an error
+    }
+    };
+
+    request.onerror = function() {
+    // There was a connection error of some sort
+    };
+
+    request.send();
 })()
