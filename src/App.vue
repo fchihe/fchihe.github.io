@@ -12,11 +12,7 @@ export default {
         {id : "FN" , valeur:1},
         {id : "REM" , valeur:0},
         {id : "DLF" , valeur:1},
-
       ],
-      coefficientFi : 1,
-      coefficientFn : 1,
-      coefficientDlf : 1,
       recherche :""
     }
   },
