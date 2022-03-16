@@ -106,7 +106,7 @@ function cleanValeur(valeur) {
         </div>
         <ul>
            <li v-for="score in circo.scores">
-           {{score.id}} {{score.score}}
+           {{score.id}} {{Math.round(score.score/circo.score*100)/100}}
            </li>
            
            </ul>
