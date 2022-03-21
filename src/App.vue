@@ -8,10 +8,14 @@ export default {
             circonscriptions: json,
             coefficients: [
                 // {id : "PS" , valeur:0},
+                { id: "COM", valeur: 1, valFiltre: 1, filtre: false },
                 { id: "FI", valeur: 1, valFiltre: 11, filtre: false },
-                { id: "FN", valeur: 1, valFiltre: 13, filtre: false },
+                { id: "SOC", valeur: 0, valFiltre: 7, filtre: false },
+                { id: "ECO", valeur: 0, valFiltre: 4, filtre: false },                
                 { id: "REM", valeur: 0, valFiltre: 28, filtre: false },
+                { id: "LR", valeur: 0, valFiltre: 16, filtre: false },
                 { id: "DLF", valeur: 1, valFiltre: 1, filtre: false },
+                { id: "FN", valeur: 1, valFiltre: 13, filtre: false },
             ],
             candidats: [],
             recherche: ""
@@ -101,7 +105,12 @@ function cleanValeur(valeur) {
             <div class="filtres">
                 <div class="filtre" v-for="coef in coefficients">
                 <!-- <img v-bind:src="('assets/' + coef.id + '.jpg')"/> -->
-                    <h3>Coefficient {{ coef.id }}</h3>
+                    <h3>
+                         <div
+                                                class="couleur"
+                                                :class="[(coef.id == 'FI' ? 'c-fi' : ''), (coef.id == 'REM' ? 'c-rem' : ''), (coef.id == 'FN' ? 'c-fn' : ''), (coef.id == 'DLF' ? 'c-dlf' : ''),(coef.id == 'SOC' ? 'c-soc' : ''),(coef.id == 'ECO' ? 'c-eco' : ''),(coef.id == 'LR' ? 'c-lr' : ''),(coef.id == 'COM' ? 'c-com' : '')]">
+                                                </div>
+                        Coefficient {{ coef.id }}</h3>
                     <input class="form-control" type="number" step="0.05" v-model="coef.valeur" />
                     <input
                         type="range"
@@ -147,8 +156,8 @@ function cleanValeur(valeur) {
                                         <td>
                                             <div
                                                 class="couleur"
-                                                :class="[(score.id == 'FI' ? 'c-fi' : ''), (score.id == 'REM' ? 'c-rem' : ''), (score.id == 'FN' ? 'c-fn' : ''), (score.id == 'DLF' ? 'c-dlf' : '')]"
-                                            ></div>
+                                                :class="[(score.id == 'FI' ? 'c-fi' : ''), (score.id == 'REM' ? 'c-rem' : ''), (score.id == 'FN' ? 'c-fn' : ''), (score.id == 'DLF' ? 'c-dlf' : ''),(score.id == 'SOC' ? 'c-soc' : ''),(score.id == 'ECO' ? 'c-eco' : ''),(score.id == 'LR' ? 'c-lr' : ''),(score.id == 'COM' ? 'c-com' : '')]">
+                                                </div>
                                             {{ score.id }}
                                         </td>
                                         <td>{{ Math.round(score.score / circo.score * 100) / 100 }}</td>
@@ -185,6 +194,18 @@ function cleanValeur(valeur) {
 }
 .c-dlf {
     background-color: blue;
+}
+.c-lr {
+    background-color: #51b9ff;
+}
+.c-soc {
+    background-color: pink;
+}
+.c-eco {
+    background-color: green;
+}
+.c-com {
+    background-color: #9c0000;
 }
 .couleur {
     width: 15px;
