@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         Terrena-Pro DSI
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.0
 // @description  Mode Kiosque Terrena Pro
 // @author       You
 // @match        https://www.terrena-pro.fr/*
 // @match        https://b2cterrena.b2clogin.com/*
 // @icon         https://www.terrena-pro.fr/content/images/favicon_terrena_pro.png
 // @grant        none
+// @source       https://raw.githubusercontent.com/fchihe/fchihe.github.io/main/script.js
 // ==/UserScript==
 
 (function() {
