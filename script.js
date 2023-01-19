@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Terrena-Pro DSI
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Mode Kiosque Terrena Pro
 // @author       You
 // @match        https://www.terrena-pro.fr/*
